@@ -1,0 +1,758 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Арсен Кухня - Все виды плова</title>
+  <meta name="description" content="Арсен Кухня - все виды плова для дома, офиса и мероприятий. Готовим насыщенно, доставляем вовремя, кормим по-честному." />
+  <meta property="og:title" content="Арсен Кухня - Все виды плова" />
+  <meta property="og:description" content="Плов для семьи, офиса и больших событий. Заказ по телефону 8 (964) 016-83-49." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap&subset=cyrillic" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #c4491f;
+      --accent: #f0a93a;
+      --bg: #f8f3ea;
+      --text: #25180f;
+      --muted: #6f5b49;
+      --card: #fffdf9;
+      --border: rgba(37, 24, 15, 0.12);
+      --shadow: 0 14px 30px rgba(37, 24, 15, 0.1);
+      --radius-lg: 1.3rem;
+      --radius-md: 1rem;
+      --container: min(1120px, 92vw);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Manrope", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(240, 169, 58, 0.2), transparent 46%),
+        radial-gradient(circle at 90% 20%, rgba(196, 73, 31, 0.2), transparent 38%),
+        var(--bg);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      border-radius: var(--radius-lg);
+      object-fit: cover;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: var(--container);
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 4.5rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .kicker {
+      display: inline-block;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      background: rgba(196, 73, 31, 0.12);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    h1, h2, h3 {
+      font-family: "Unbounded", sans-serif;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.8rem);
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      margin-bottom: 0.9rem;
+    }
+
+    .lead {
+      color: var(--muted);
+      max-width: 58ch;
+      font-size: clamp(1rem, 2vw, 1.15rem);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.95rem 1.4rem;
+      border-radius: 1rem;
+      font-weight: 700;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), #da5c31);
+      color: #fff;
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(4px);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--border);
+      background: rgba(248, 243, 234, 0.88);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav {
+      min-height: 4.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 800;
+      font-size: 1rem;
+    }
+
+    .brand-dot {
+      width: 0.9rem;
+      height: 0.9rem;
+      border-radius: 999px;
+      background: var(--accent);
+      border: 2px solid var(--primary);
+      box-shadow: 0 0 0 5px rgba(196, 73, 31, 0.15);
+    }
+
+    .hero {
+      padding: 4rem 0 3rem;
+      border-top: 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 1.3rem;
+    }
+
+    .hero-copy {
+      background: rgba(255, 253, 249, 0.85);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.4rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.4rem;
+    }
+
+    .hero-badges {
+      list-style: none;
+      display: grid;
+      gap: 0.55rem;
+      margin-top: 1.2rem;
+    }
+
+    .hero-badges li {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .hero-badges li::before {
+      content: "";
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background: var(--accent);
+      flex: 0 0 auto;
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-visual img {
+      min-height: 260px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .floating-note {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      background: rgba(37, 24, 15, 0.86);
+      color: #fff;
+      border-radius: 0.9rem;
+      padding: 0.8rem 1rem;
+      font-size: 0.9rem;
+      max-width: 220px;
+    }
+
+    .cards {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.2rem;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(196, 73, 31, 0.3);
+    }
+
+    .card h3 {
+      font-size: 1.03rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      gap: 1.2rem;
+      margin-top: 1.5rem;
+    }
+
+    .benefit-icon {
+      width: 2.1rem;
+      height: 2.1rem;
+      border-radius: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(240, 169, 58, 0.25);
+      color: #8a3a1d;
+      font-size: 1.15rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .offers {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .offer {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.3rem;
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .offer-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .price {
+      color: var(--primary);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .proof {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .stat {
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.62);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.6rem;
+      font-family: "Unbounded", sans-serif;
+    }
+
+    .quote {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 1.15rem;
+      background: var(--card);
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .quote b {
+      display: block;
+      color: var(--text);
+      margin-top: 0.7rem;
+      font-size: 0.95rem;
+    }
+
+    .about {
+      display: grid;
+      gap: 1.2rem;
+      margin-top: 1.5rem;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 0.8rem;
+      margin-top: 1.3rem;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--card);
+      overflow: hidden;
+    }
+
+    .faq-q {
+      width: 100%;
+      text-align: left;
+      background: transparent;
+      border: 0;
+      color: var(--text);
+      padding: 1rem;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      gap: 0.8rem;
+    }
+
+    .faq-a {
+      padding: 0 1rem 1rem;
+      color: var(--muted);
+      display: none;
+    }
+
+    .faq-item.active .faq-a {
+      display: block;
+    }
+
+    .cta-box {
+      margin-top: 1.4rem;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(145deg, #2f1a0f, #4f2d1b);
+      color: #fff;
+      padding: 1.4rem;
+      border: 1px solid rgba(240, 169, 58, 0.35);
+    }
+
+    .cta-box p {
+      color: rgba(255, 255, 255, 0.82);
+      margin-top: 0.6rem;
+      max-width: 60ch;
+    }
+
+    .cta-box .btn-secondary {
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.35);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    footer {
+      padding: 2.4rem 0 6rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      gap: 1rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1.4rem;
+    }
+
+    .footer-title {
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+
+    .mobile-call {
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0.9rem;
+      width: min(94vw, 420px);
+      z-index: 50;
+      border-radius: 1.1rem;
+      box-shadow: 0 18px 36px rgba(37, 24, 15, 0.26);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      will-change: transform, opacity;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (min-width: 760px) {
+      .hero {
+        padding: 5.2rem 0 3.8rem;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1.05fr 0.95fr;
+        align-items: stretch;
+      }
+
+      .cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .offers {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .proof {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .about {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1.2fr 1fr 1fr;
+      }
+
+      .mobile-call {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Арсен Кухня">
+        <span class="brand-dot" aria-hidden="true"></span>
+        Арсен Кухня
+      </a>
+      <a class="btn btn-primary" href="tel:+79640168349">Позвонить: 8 (964) 016-83-49</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="kicker">Плов на заказ</span>
+          <h1>Плов, после которого гости просят добавку</h1>
+          <p class="lead">Готовим все виды плова для дома, офиса и мероприятий. Без задержек, без "как получилось" - только горячо, сытно и вовремя к вашему столу.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="tel:+79640168349">Заказать звонок</a>
+            <a class="btn btn-secondary" href="#offers">Смотреть форматы</a>
+          </div>
+          <ul class="hero-badges">
+            <li>Быстрый приём заказа по телефону</li>
+            <li>Большие объёмы под мероприятия</li>
+            <li>Стабильный вкус от партии к партии</li>
+          </ul>
+        </div>
+        <div class="hero-visual reveal">
+          <img src="https://source.unsplash.com/1200x900/?pilaf,uzbek,food" alt="Казан с ароматным пловом" loading="eager" />
+          <div class="floating-note">Работаем так, чтобы вы думали о гостях, а не о кухне.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pain">
+      <div class="container">
+        <span class="kicker reveal">Боли клиентов</span>
+        <h2 class="reveal">Когда нужно накормить людей, рисковать нельзя</h2>
+        <p class="lead reveal">Чаще всего к нам приходят после неудачного опыта: обещали одно, привезли другое. Мы построили сервис так, чтобы таких сюрпризов не было.</p>
+        <div class="cards">
+          <article class="card reveal">
+            <h3>Еда приезжает с опозданием</h3>
+            <p>Срывается тайминг мероприятия, гости ждут, атмосфера падает.</p>
+          </article>
+          <article class="card reveal">
+            <h3>Непредсказуемый вкус</h3>
+            <p>В одном заказе отлично, в следующем - совсем не тот уровень.</p>
+          </article>
+          <article class="card reveal">
+            <h3>Малые порции за большой чек</h3>
+            <p>Люди остаются голодными, а организатору неловко перед гостями.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="solution">
+      <div class="container">
+        <span class="kicker reveal">Наше решение</span>
+        <h2 class="reveal">Арсен Кухня берёт питание под контроль</h2>
+        <div class="grid-2">
+          <article class="card reveal">
+            <h3>Готовим под ваш формат</h3>
+            <p>Семейный ужин, обед в офис, праздник на десятки гостей - подбираем объём и подачу под задачу, а не наоборот.</p>
+          </article>
+          <article class="card reveal">
+            <h3>Доставляем к точному времени</h3>
+            <p>Чётко согласовываем слот и держим связь по заказу, чтобы вы не гадали, где ваш курьер.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="benefits">
+      <div class="container">
+        <span class="kicker reveal">Почему выбирают нас</span>
+        <h2 class="reveal">3 причины заказать плов именно здесь</h2>
+        <div class="cards">
+          <article class="card reveal">
+            <div class="benefit-icon" aria-hidden="true">01</div>
+            <h3>Все виды плова</h3>
+            <p>От классических рецептов до праздничных форматов под большие компании.</p>
+          </article>
+          <article class="card reveal">
+            <div class="benefit-icon" aria-hidden="true">02</div>
+            <h3>Порции, которыми наедаются</h3>
+            <p>Работаем честно: нормальный объём, насыщенный вкус и понятный результат.</p>
+          </article>
+          <article class="card reveal">
+            <div class="benefit-icon" aria-hidden="true">03</div>
+            <h3>Прямой контакт без посредников</h3>
+            <p>Заказ и согласование напрямую по телефону - быстро, без долгих переписок.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="offers">
+      <div class="container">
+        <span class="kicker reveal">Форматы заказа</span>
+        <h2 class="reveal">Выберите формат под ваш повод</h2>
+        <p class="lead reveal">Точную стоимость рассчитываем по количеству гостей и формату подачи. Позвоните - сориентируем за пару минут.</p>
+        <div class="offers">
+          <article class="offer reveal">
+            <div class="offer-top">
+              <h3>Домашний заказ</h3>
+              <span class="price">Расчёт по порциям</span>
+            </div>
+            <p>Плов на ужин для семьи или гостей дома. Удобно, вкусно, без лишней суеты на кухне.</p>
+            <a class="btn btn-secondary" href="tel:+79640168349">Узнать стоимость</a>
+          </article>
+          <article class="offer reveal">
+            <div class="offer-top">
+              <h3>Офис и команда</h3>
+              <span class="price">Опт под коллектив</span>
+            </div>
+            <p>Сытный обед для сотрудников, когда нужно накормить команду без потери времени.</p>
+            <a class="btn btn-secondary" href="tel:+79640168349">Запросить расчёт</a>
+          </article>
+          <article class="offer reveal">
+            <div class="offer-top">
+              <h3>Праздники и события</h3>
+              <span class="price">Под ключ</span>
+            </div>
+            <p>Плов для дней рождения, свадеб и семейных мероприятий с упором на стабильность и подачу.</p>
+            <a class="btn btn-secondary" href="tel:+79640168349">Обсудить дату</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="proof">
+      <div class="container">
+        <span class="kicker reveal">Социальное доказательство</span>
+        <h2 class="reveal">Люди возвращаются за следующим заказом</h2>
+        <div class="proof">
+          <div class="stat reveal">
+            <strong>90%</strong>
+            <p>клиентов приходят повторно после первого заказа по рекомендации знакомых.</p>
+          </div>
+          <div class="stat reveal">
+            <strong>1 звонок</strong>
+            <p>достаточно, чтобы согласовать формат, объём и время доставки.</p>
+          </div>
+          <blockquote class="quote reveal">"Заказывали на семейное торжество - всё приехало горячим и вовремя. Гости реально хвалили вкус, а это редкость."<b>Айгуль, заказ на 25 гостей</b></blockquote>
+          <blockquote class="quote reveal">"Брали для офиса, ребята сыты и довольны. Удобно, что можно быстро решить вопрос по телефону без долгих согласований."<b>Илья, корпоративный заказ</b></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <span class="kicker reveal">О компании</span>
+        <h2 class="reveal">Арсен Кухня - когда вкус важнее красивых обещаний</h2>
+        <div class="about">
+          <article class="card reveal">
+            <p>Мы работаем в сфере общепита и делаем ставку на одно направление: все виды плова. Такая фокусировка даёт стабильный результат и предсказуемое качество в каждом заказе.</p>
+          </article>
+          <article class="card reveal">
+            <p>Наша ценность простая: накормить людей так, чтобы организатору было спокойно и не стыдно перед гостями. Поэтому контролируем вкус, объём и время подачи.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <span class="kicker reveal">FAQ</span>
+        <h2 class="reveal">Частые вопросы перед заказом</h2>
+        <div class="faq-list">
+          <article class="faq-item reveal active">
+            <button class="faq-q" type="button">На сколько человек можно заказать? <span>+</span></button>
+            <div class="faq-a">
+              <p>Готовим как небольшие объёмы для семьи, так и заказы на крупные мероприятия. Подберём формат под ваше количество гостей.</p>
+            </div>
+          </article>
+          <article class="faq-item reveal">
+            <button class="faq-q" type="button">Как быстро можно оформить заказ? <span>+</span></button>
+            <div class="faq-a">
+              <p>Обычно достаточно одного звонка, чтобы согласовать меню, объём и время. По срочным заказам уточняем возможность сразу по телефону.</p>
+            </div>
+          </article>
+          <article class="faq-item reveal">
+            <button class="faq-q" type="button">Можно ли заказать на корпоратив или свадьбу? <span>+</span></button>
+            <div class="faq-a">
+              <p>Да, это один из основных форматов работы. Рассчитываем объём и подачу под сценарий вашего события.</p>
+            </div>
+          </article>
+          <article class="faq-item reveal">
+            <button class="faq-q" type="button">Как узнать итоговую цену? <span>+</span></button>
+            <div class="faq-a">
+              <p>Цена зависит от количества порций и формата мероприятия. Позвоните, и мы быстро рассчитаем точную стоимость под ваш запрос.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cta">
+      <div class="container">
+        <span class="kicker reveal">Финальный шаг</span>
+        <h2 class="reveal">Нужно накормить людей без стресса? Звоните сейчас</h2>
+        <div class="cta-box reveal">
+          <h3>Арсен Кухня</h3>
+          <p>Общепит. Все виды плова. Принимаем заказ по телефону и сразу ориентируем по объёму и стоимости.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="tel:+79640168349">Позвонить: 8 (964) 016-83-49</a>
+            <a class="btn btn-secondary" href="https://wa.me/79640168349" target="_blank" rel="noopener noreferrer">Написать в WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <p class="footer-title">Арсен Кухня</p>
+        <p>Общепит и все виды плова на заказ для дома, офиса и мероприятий.</p>
+      </div>
+      <div>
+        <p class="footer-title">Контакты</p>
+        <p><a href="tel:+79640168349">8 (964) 016-83-49</a></p>
+        <p><a href="mailto:contact@arsen-kuhnya.ru">contact@arsen-kuhnya.ru</a></p>
+      </div>
+      <div>
+        <p class="footer-title">Навигация</p>
+        <p><a href="#offers">Форматы заказа</a></p>
+        <p><a href="#faq">Вопросы и ответы</a></p>
+        <p><a href="#cta">Оставить заявку</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <a class="btn btn-primary mobile-call" href="tel:+79640168349">Позвонить: 8 (964) 016-83-49</a>
+
+  <script>
+    const revealItems = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 });
+
+    revealItems.forEach((item) => observer.observe(item));
+
+    const faqButtons = document.querySelectorAll('.faq-q');
+    faqButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const item = button.closest('.faq-item');
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>
