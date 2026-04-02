@@ -3,413 +3,371 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Арсен Кухня - Горячий плов для дома и праздников</title>
-  <meta name="description" content="Арсен Кухня готовит все виды плова для дома, офиса и мероприятий. Горячая подача, сытные порции, заказ по телефону 8 (964) 016-83-49." />
-  <meta property="og:title" content="Арсен Кухня - Все виды плова" />
-  <meta property="og:description" content="Плов, который собирает гостей за столом. Заказ по телефону 8 (964) 016-83-49." />
+  <title>Арсен Кухня - Доставка плова</title>
+  <meta name="description" content="Арсен Кухня - доставка и заказ всех видов плова. Выберите раздел, позвоните и оформите заказ за 1 минуту." />
+  <meta property="og:title" content="Арсен Кухня - Доставка плова" />
+  <meta property="og:description" content="Быстрый заказ плова по телефону 8 (964) 016-83-49" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?auto=format&fit=crop&w=1400&q=80" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Ruslan+Display&family=Nunito:wght@400;600;700;800&display=swap&subset=cyrillic" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Manrope:wght@400;500;700;800&display=swap&subset=cyrillic" rel="stylesheet" />
 
   <style>
     :root {
-      --primary: #b7401f;
-      --accent: #f29f32;
-      --bg: #fdf5e8;
-      --text: #2f1b12;
-      --muted: #6d4f3f;
-      --card: #fffdf8;
-      --border: rgba(47, 27, 18, 0.14);
-      --shadow: 0 18px 40px rgba(47, 27, 18, 0.11);
-      --radius-lg: 1.4rem;
+      --primary: #d45824;
+      --accent: #f4b648;
+      --bg: #f8f4ef;
+      --text: #23160f;
+      --muted: #6e5a4d;
+      --card: #ffffff;
+      --border: #eadfce;
+      --success: #2b8a53;
+      --radius-lg: 1.2rem;
       --radius-md: 1rem;
-      --container: min(1140px, 92vw);
+      --shadow: 0 14px 32px rgba(35, 22, 15, 0.08);
+      --container: min(1180px, 94vw);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: "Nunito", sans-serif;
+      font-family: "Manrope", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at 8% 12%, rgba(242, 159, 50, 0.28), transparent 40%),
-        radial-gradient(circle at 90% 4%, rgba(183, 64, 31, 0.2), transparent 34%),
-        linear-gradient(180deg, #fff7ec 0%, var(--bg) 42%, #f8ecda 100%);
-      line-height: 1.55;
+        radial-gradient(circle at 10% 0%, rgba(244, 182, 72, 0.22), transparent 36%),
+        radial-gradient(circle at 100% 0%, rgba(212, 88, 36, 0.16), transparent 28%),
+        var(--bg);
+      line-height: 1.45;
       overflow-x: hidden;
     }
 
-    img {
-      width: 100%;
-      display: block;
-      border-radius: var(--radius-lg);
-      object-fit: cover;
-    }
-
+    img { width: 100%; display: block; object-fit: cover; border-radius: 1rem; }
     a { color: inherit; text-decoration: none; }
-
     .container { width: var(--container); margin: 0 auto; }
 
-    .section {
-      padding: 4.6rem 0;
-      border-top: 1px solid var(--border);
+    .topbar {
+      background: #1f140f;
+      color: #f5e6d8;
+      font-size: 0.86rem;
+      padding: 0.55rem 0;
     }
 
-    .kicker {
-      display: inline-flex;
+    .topbar-row {
+      display: flex;
       align-items: center;
-      gap: 0.45rem;
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-      color: var(--primary);
-      padding: 0.38rem 0.86rem;
-      border-radius: 999px;
-      background: rgba(183, 64, 31, 0.12);
-      margin-bottom: 1rem;
-    }
-
-    h1, h2, h3 {
-      font-family: "Ruslan Display", serif;
-      font-weight: 400;
-      line-height: 1.06;
-      letter-spacing: 0.01em;
-    }
-
-    h1 { font-size: clamp(2rem, 6.2vw, 4rem); margin-bottom: 1rem; }
-    h2 { font-size: clamp(1.65rem, 4.1vw, 2.7rem); margin-bottom: 0.85rem; }
-    h3 { font-size: 1.3rem; margin-bottom: 0.55rem; }
-
-    p { font-size: 1rem; }
-
-    .lead {
-      color: var(--muted);
-      max-width: 62ch;
-      font-size: clamp(1rem, 2vw, 1.16rem);
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.45rem;
-      padding: 0.96rem 1.44rem;
-      border-radius: 1rem;
-      border: 1px solid transparent;
-      font-weight: 800;
-      transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
-      cursor: pointer;
-    }
-
-    .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
-
-    .btn-primary {
-      color: #fff;
-      background: linear-gradient(135deg, var(--primary), #d3532c);
-    }
-
-    .btn-secondary {
-      border-color: var(--border);
-      background: rgba(255, 255, 255, 0.75);
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
 
     header {
       position: sticky;
       top: 0;
       z-index: 30;
+      background: rgba(248, 244, 239, 0.95);
       border-bottom: 1px solid var(--border);
-      background: rgba(253, 245, 232, 0.88);
       backdrop-filter: blur(8px);
     }
 
     .nav {
-      min-height: 4.4rem;
+      min-height: 4.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 0.8rem;
+      gap: 0.9rem;
     }
 
     .brand {
       display: flex;
       align-items: center;
       gap: 0.65rem;
+      font-family: "Russo One", sans-serif;
+      letter-spacing: 0.01em;
+      font-size: 1rem;
+    }
+
+    .brand-dot {
+      width: 0.95rem;
+      height: 0.95rem;
+      border-radius: 50%;
+      background: linear-gradient(145deg, var(--accent), var(--primary));
+      box-shadow: 0 0 0 4px rgba(212, 88, 36, 0.18);
+    }
+
+    .nav-links {
+      display: none;
+      gap: 1rem;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 1rem;
+      padding: 0.88rem 1.25rem;
+      border: 1px solid transparent;
       font-weight: 800;
-      font-size: 1.05rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
     }
 
-    .brand-icon {
-      width: 1rem;
-      height: 1rem;
-      border-radius: 999px;
-      background: var(--accent);
-      border: 2px solid var(--primary);
-      box-shadow: 0 0 0 5px rgba(183, 64, 31, .16);
+    .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+
+    .btn-primary {
+      background: linear-gradient(145deg, var(--primary), #e9702f);
+      color: #fff;
     }
 
-    .hero { border-top: 0; padding: 4.1rem 0 3.1rem; }
+    .btn-light {
+      background: #fff;
+      border-color: var(--border);
+    }
+
+    .hero {
+      padding: 3rem 0 2rem;
+    }
 
     .hero-grid {
       display: grid;
-      gap: 1.25rem;
+      gap: 1rem;
     }
 
     .hero-copy {
+      background: #fff;
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
-      background:
-        linear-gradient(160deg, rgba(255,255,255,.76), rgba(255,255,255,.58));
       padding: 1.4rem;
+      box-shadow: var(--shadow);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: #fff4dd;
+      color: #98511f;
+      border: 1px solid #f2ddbd;
+      border-radius: 999px;
+      padding: 0.36rem 0.75rem;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.8rem;
+    }
+
+    h1, h2, h3 {
+      font-family: "Russo One", sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      line-height: 1.08;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5.3vw, 3.6rem);
+      margin-bottom: 0.9rem;
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 3.3vw, 2.4rem);
+      margin-bottom: 0.85rem;
+    }
+
+    p.lead {
+      color: var(--muted);
+      max-width: 60ch;
+      font-size: clamp(1rem, 2vw, 1.12rem);
     }
 
     .hero-actions {
-      margin-top: 1.3rem;
+      margin-top: 1.2rem;
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
+      gap: 0.7rem;
     }
 
-    .hero-points {
-      list-style: none;
-      margin-top: 1.1rem;
+    .hero-info {
+      margin-top: 1rem;
       display: grid;
-      gap: 0.45rem;
-    }
-
-    .hero-points li {
+      gap: 0.5rem;
       color: var(--muted);
       font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 0.55rem;
-    }
-
-    .hero-points li::before {
-      content: "";
-      width: .5rem;
-      height: .5rem;
-      border-radius: 999px;
-      background: var(--accent);
-      flex: 0 0 auto;
+      font-size: 0.95rem;
     }
 
     .hero-visual {
       position: relative;
-      min-height: 290px;
-    }
-
-    .hero-visual img {
-      min-height: 100%;
+      min-height: 320px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
       border: 1px solid var(--border);
       box-shadow: var(--shadow);
     }
 
-    .hero-note {
+    .hero-visual img {
+      height: 100%;
+      border-radius: 0;
+    }
+
+    .hero-chip {
       position: absolute;
-      right: .9rem;
-      bottom: .9rem;
-      background: rgba(47, 27, 18, 0.9);
+      left: 0.8rem;
+      bottom: 0.8rem;
+      background: rgba(35, 22, 15, 0.83);
       color: #fff;
-      border-radius: .9rem;
-      padding: .76rem .94rem;
-      max-width: 230px;
-      font-size: .9rem;
       font-weight: 700;
+      font-size: 0.86rem;
+      border-radius: 0.8rem;
+      padding: 0.6rem 0.75rem;
+      max-width: 240px;
     }
 
-    .cards {
-      margin-top: 1.5rem;
+    .section {
+      padding: 3.6rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .chips {
+      margin-top: 1.1rem;
       display: grid;
-      gap: .95rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.65rem;
     }
 
-    .card {
-      background: var(--card);
+    .chip {
+      background: #fff;
       border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 1.2rem;
-      transition: transform .25s ease, border-color .25s ease;
-    }
-
-    .card:hover { transform: translateY(-3px); border-color: rgba(183,64,31,.34); }
-
-    .card p { color: var(--muted); }
-
-    .mini-grid,
-    .offers,
-    .proof-grid,
-    .about-grid,
-    .gallery {
-      margin-top: 1.45rem;
-      display: grid;
-      gap: 1rem;
-    }
-
-    .icon-box {
-      width: 2.15rem;
-      height: 2.15rem;
-      border-radius: .8rem;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(242,159,50,.25);
-      color: #884019;
-      font-weight: 800;
-      margin-bottom: .6rem;
-    }
-
-    .offer {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 1.25rem;
-      display: grid;
-      gap: .85rem;
-    }
-
-    .offer-head {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: .8rem;
-    }
-
-    .price {
-      white-space: nowrap;
-      font-weight: 800;
-      color: var(--primary);
-    }
-
-    .stat {
-      border-radius: var(--radius-md);
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.7);
-      padding: 1rem;
-    }
-
-    .stat strong {
-      display: block;
-      font-family: "Ruslan Display", serif;
-      font-size: 2rem;
-      line-height: 1;
-      margin-bottom: .35rem;
-    }
-
-    .quote {
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border);
-      background: var(--card);
-      padding: 1.1rem;
+      border-radius: 0.85rem;
+      padding: 0.6rem 0.8rem;
+      font-weight: 700;
       color: var(--muted);
-      font-weight: 700;
+      text-align: center;
     }
 
-    .quote b {
-      display: block;
-      color: var(--text);
-      margin-top: .6rem;
-      font-size: .95rem;
+    .menu-blank {
+      margin-top: 1.35rem;
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .menu-row {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+    }
+
+    .menu-row b {
+      font-size: 1rem;
+    }
+
+    .soon {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: var(--success);
+      background: #e9f8ef;
+      border: 1px solid #cbeed8;
+      border-radius: 999px;
+      padding: 0.35rem 0.6rem;
+      white-space: nowrap;
+    }
+
+    .gallery {
+      margin-top: 1.3rem;
+      display: grid;
+      gap: 0.75rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .gallery img {
       border: 1px solid var(--border);
-      min-height: 190px;
+      min-height: 165px;
+      transition: transform 0.25s ease;
     }
 
-    .faq-list {
-      margin-top: 1.3rem;
+    .gallery img:hover {
+      transform: scale(1.02);
+    }
+
+    .stats {
+      margin-top: 1.2rem;
       display: grid;
-      gap: .8rem;
+      gap: 0.75rem;
     }
 
-    .faq-item {
+    .stat {
+      background: #fff;
       border: 1px solid var(--border);
       border-radius: var(--radius-md);
-      background: var(--card);
-      overflow: hidden;
+      padding: 1rem;
     }
 
-    .faq-q {
-      width: 100%;
-      border: 0;
-      background: transparent;
-      text-align: left;
-      font: inherit;
-      color: var(--text);
-      font-weight: 800;
-      padding: .95rem 1rem;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      gap: .8rem;
+    .stat strong {
+      font-size: 1.5rem;
+      display: block;
+      margin-bottom: 0.25rem;
+      font-family: "Russo One", sans-serif;
     }
 
-    .faq-a {
-      display: none;
-      padding: 0 1rem 1rem;
-      color: var(--muted);
-    }
-
-    .faq-item.active .faq-a { display: block; }
-
-    .cta-panel {
-      margin-top: 1.35rem;
-      padding: 1.45rem;
+    .contact-box {
+      margin-top: 1.2rem;
+      background: linear-gradient(150deg, #2e1b12, #4a2b1d);
       border-radius: var(--radius-lg);
+      border: 1px solid rgba(244, 182, 72, 0.35);
       color: #fff;
-      border: 1px solid rgba(242,159,50,.46);
-      background: linear-gradient(145deg, #3b2014, #5b2f1c);
+      padding: 1.3rem;
     }
 
-    .cta-panel p { color: rgba(255,255,255,.86); margin-top: .55rem; }
-
-    .cta-panel .btn-secondary {
-      color: #fff;
-      border-color: rgba(255,255,255,.34);
-      background: rgba(255,255,255,.08);
+    .contact-box p {
+      margin-top: 0.5rem;
+      color: rgba(255, 255, 255, 0.82);
     }
+
+    .contact-box .hero-actions { margin-top: 1rem; }
 
     footer {
-      padding: 2.45rem 0 6rem;
+      padding: 2rem 0 5.8rem;
       color: var(--muted);
-      font-size: .96rem;
     }
 
     .footer-grid {
       border-top: 1px solid var(--border);
-      padding-top: 1.35rem;
+      padding-top: 1rem;
       display: grid;
-      gap: 1rem;
+      gap: 0.85rem;
     }
 
     .footer-title {
-      color: var(--text);
       font-weight: 800;
-      margin-bottom: .35rem;
+      color: var(--text);
+      margin-bottom: 0.3rem;
     }
 
     .mobile-call {
       position: fixed;
-      z-index: 60;
       left: 50%;
       transform: translateX(-50%);
-      bottom: .9rem;
-      width: min(94vw, 430px);
-      border-radius: 1rem;
-      box-shadow: 0 20px 35px rgba(47,27,18,.24);
+      bottom: 0.8rem;
+      width: min(94vw, 420px);
+      z-index: 60;
+      box-shadow: 0 16px 28px rgba(35, 22, 15, 0.23);
     }
 
     .reveal {
       opacity: 0;
-      transform: translateY(24px);
-      transition: opacity .62s ease, transform .62s ease;
-      will-change: opacity, transform;
+      transform: translateY(18px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
     }
 
     .reveal.visible {
@@ -418,246 +376,154 @@
     }
 
     @media (min-width: 760px) {
-      .hero { padding: 5.4rem 0 3.8rem; }
+      .nav-links { display: flex; }
+
+      .hero {
+        padding: 4rem 0 2.6rem;
+      }
 
       .hero-grid {
-        grid-template-columns: 1.04fr .96fr;
+        grid-template-columns: 1.05fr 0.95fr;
         align-items: stretch;
       }
 
-      .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .mini-grid { grid-template-columns: 1fr 1fr; }
-      .offers { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .proof-grid { grid-template-columns: 1fr 1fr; }
-      .about-grid { grid-template-columns: 1fr 1fr; }
-      .gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .footer-grid { grid-template-columns: 1.2fr 1fr 1fr; }
+      .chips {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .menu-blank {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .stats {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .footer-grid {
+        grid-template-columns: 1.4fr 1fr 1fr;
+      }
+
       .mobile-call { display: none; }
     }
   </style>
 </head>
 <body>
+  <div class="topbar">
+    <div class="container topbar-row">
+      <span>Все виды плова • Доставка и самовывоз</span>
+      <a href="tel:+79640168349">8 (964) 016-83-49</a>
+    </div>
+  </div>
+
   <header>
     <div class="container nav">
-      <a href="#top" class="brand" aria-label="Арсен Кухня">
-        <span class="brand-icon" aria-hidden="true"></span>
-        Арсен Кухня
-      </a>
-      <a class="btn btn-primary" href="tel:+79640168349">Позвонить: 8 (964) 016-83-49</a>
+      <a class="brand" href="#top"><span class="brand-dot" aria-hidden="true"></span>Арсен Кухня</a>
+      <nav class="nav-links">
+        <a href="#menu">Меню</a>
+        <a href="#gallery">Фото блюд</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+      <a class="btn btn-primary" href="tel:+79640168349">Заказать звонок</a>
     </div>
   </header>
 
   <main id="top">
-    <section class="hero section">
+    <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy reveal">
-          <span class="kicker">Все виды плова</span>
-          <h1>Тёплый плов для тёплых встреч</h1>
-          <p class="lead">Арсен Кухня готовит плов так, чтобы за столом было спокойно: ароматно, сытно и вовремя. От домашнего ужина до большого праздника.</p>
+          <span class="badge">Доставка плова</span>
+          <h1>Плов, который хочется заказать снова</h1>
+          <p class="lead">Готовим вкусный плов для семейных ужинов, офиса и праздников. Удобный заказ по телефону и понятная подача без лишней суеты.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="tel:+79640168349">Заказать по телефону</a>
-            <a class="btn btn-secondary" href="#offers">Выбрать формат</a>
+            <a class="btn btn-primary" href="tel:+79640168349">Позвонить сейчас</a>
+            <a class="btn btn-light" href="#menu">Открыть меню</a>
           </div>
-          <ul class="hero-points">
-            <li>Горячая подача к оговоренному времени</li>
-            <li>Порции, которыми реально наедаются</li>
-            <li>Чёткое согласование заказа в одном звонке</li>
-          </ul>
+          <div class="hero-info">
+            <span>Работаем в сфере общепита</span>
+            <span>Специализация: все виды плова</span>
+          </div>
         </div>
-
         <div class="hero-visual reveal">
-          <img src="https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?auto=format&fit=crop&w=1400&q=80" alt="Горячий плов в казане" loading="eager" referrerpolicy="no-referrer" />
-          <div class="hero-note">Собираем людей за столом с тем вкусом, который запоминают.</div>
+          <img src="https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?auto=format&fit=crop&w=1400&q=80" alt="Плов в казане" loading="eager" referrerpolicy="no-referrer" />
+          <div class="hero-chip">Горячая подача и вкусный домашний стиль</div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="pain">
+    <section class="section" id="menu">
       <div class="container">
-        <span class="kicker reveal">Что обычно раздражает</span>
-        <h2 class="reveal">Вы не должны переживать из-за еды в важный день</h2>
-        <p class="lead reveal">Мы хорошо знаем, почему люди меняют подрядчика по питанию. И строим сервис так, чтобы эти проблемы не повторялись.</p>
-        <div class="cards">
-          <article class="card reveal">
-            <h3>Опоздали с доставкой</h3>
-            <p>Гости уже за столом, а организатор вынужден извиняться и нервничать.</p>
-          </article>
-          <article class="card reveal">
-            <h3>Вкус "как повезёт"</h3>
-            <p>Один раз получилось отлично, второй раз совсем иначе.</p>
-          </article>
-          <article class="card reveal">
-            <h3>Слабые порции</h3>
-            <p>Половина гостей ищет, чем доесть, и праздник уже не тот.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+        <span class="badge reveal">Меню</span>
+        <h2 class="reveal">Разделы меню</h2>
+        <p class="lead reveal">Сделали структуру как в сервисе доставки: категории готовы, позиции добавим на следующем этапе.</p>
 
-    <section class="section" id="solution">
-      <div class="container">
-        <span class="kicker reveal">Как мы решаем</span>
-        <h2 class="reveal">Арсен Кухня закрывает вопрос питания под ключ</h2>
-        <div class="mini-grid">
-          <article class="card reveal">
-            <h3>Сценарий под ваш повод</h3>
-            <p>Дом, офис, день рождения, свадьба, семейное торжество - подбираем объём и формат подачи под конкретную задачу.</p>
-          </article>
-          <article class="card reveal">
-            <h3>Прозрачное согласование</h3>
-            <p>Вы заранее понимаете сколько порций, во сколько привезём и как будет организована подача.</p>
-          </article>
+        <div class="chips reveal">
+          <div class="chip">Классический плов</div>
+          <div class="chip">Праздничный плов</div>
+          <div class="chip">Плов для офиса</div>
+          <div class="chip">Порционные наборы</div>
         </div>
-      </div>
-    </section>
 
-    <section class="section" id="benefits">
-      <div class="container">
-        <span class="kicker reveal">Преимущества</span>
-        <h2 class="reveal">Почему нас советуют знакомым</h2>
-        <div class="cards">
-          <article class="card reveal">
-            <div class="icon-box">01</div>
-            <h3>Фокус только на плове</h3>
-            <p>Мы не распыляемся на десятки блюд: делаем то, в чём сильны каждый день.</p>
-          </article>
-          <article class="card reveal">
-            <div class="icon-box">02</div>
-            <h3>Вкусно и сытно</h3>
-            <p>Насыщенный вкус, правильный баланс мяса и риса, щедрые порции.</p>
-          </article>
-          <article class="card reveal">
-            <div class="icon-box">03</div>
-            <h3>Прямой контакт</h3>
-            <p>Вы общаетесь напрямую с командой, которая отвечает за ваш заказ.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="offers">
-      <div class="container">
-        <span class="kicker reveal">Форматы заказа</span>
-        <h2 class="reveal">Плов под любое событие</h2>
-        <p class="lead reveal">Точную стоимость считаем по количеству гостей и формату подачи. Позвоните - быстро сориентируем.</p>
-        <div class="offers">
-          <article class="offer reveal">
-            <div class="offer-head">
-              <h3>Семейный стол</h3>
-              <span class="price">От объёма</span>
-            </div>
-            <p>Плов для домашнего обеда или ужина, когда хочется накормить близких по-настоящему вкусно.</p>
-            <a class="btn btn-secondary" href="tel:+79640168349">Узнать цену</a>
-          </article>
-          <article class="offer reveal">
-            <div class="offer-head">
-              <h3>Офисный заказ</h3>
-              <span class="price">Опт</span>
-            </div>
-            <p>Сытный вариант для команды, чтобы люди не уходили голодными и работа не останавливалась.</p>
-            <a class="btn btn-secondary" href="tel:+79640168349">Сделать расчёт</a>
-          </article>
-          <article class="offer reveal">
-            <div class="offer-head">
-              <h3>Праздничный формат</h3>
-              <span class="price">Под событие</span>
-            </div>
-            <p>Подача для дней рождения и торжеств, где важно, чтобы все были довольны едой.</p>
-            <a class="btn btn-secondary" href="tel:+79640168349">Обсудить дату</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="proof">
-      <div class="container">
-        <span class="kicker reveal">Доверие клиентов</span>
-        <h2 class="reveal">Лучшая реклама - когда нас рекомендуют</h2>
-        <div class="proof-grid">
-          <div class="stat reveal">
-            <strong>90%</strong>
-            <p>повторных заказов приходит по рекомендациям друзей и родственников.</p>
-          </div>
-          <div class="stat reveal">
-            <strong>1 звонок</strong>
-            <p>чтобы согласовать количество гостей, формат и время доставки.</p>
-          </div>
-          <blockquote class="quote reveal">"Заказали на юбилей. Всё приехало горячим, гости довольны, а я вообще не переживала за стол."<b>Гузель, семейное торжество</b></blockquote>
-          <blockquote class="quote reveal">"Брали в офис на командный обед. Сытно, вкусно, и главное - без суеты с нашей стороны."<b>Рустам, корпоративный заказ</b></blockquote>
+        <div class="menu-blank">
+          <article class="menu-row reveal"><div><b>Классический плов</b><p>Скоро добавим позиции</p></div><span class="soon">Пусто</span></article>
+          <article class="menu-row reveal"><div><b>Плов с говядиной</b><p>Скоро добавим позиции</p></div><span class="soon">Пусто</span></article>
+          <article class="menu-row reveal"><div><b>Плов для больших компаний</b><p>Скоро добавим позиции</p></div><span class="soon">Пусто</span></article>
+          <article class="menu-row reveal"><div><b>Дополнения и напитки</b><p>Скоро добавим позиции</p></div><span class="soon">Пусто</span></article>
         </div>
       </div>
     </section>
 
     <section class="section" id="gallery">
       <div class="container">
-        <span class="kicker reveal">Атмосфера</span>
-        <h2 class="reveal">Плов, который выглядит так же хорошо, как и пахнет</h2>
+        <span class="badge reveal">Фото плова</span>
+        <h2 class="reveal">Больше фото блюд</h2>
+        <p class="lead reveal">Собрали визуальную витрину, чтобы сайт выглядел как полноценная страница доставки.</p>
+
         <div class="gallery">
-          <img class="reveal" src="https://images.unsplash.com/photo-1514517220031-1f9d75d8cc59?auto=format&fit=crop&w=1000&q=80" alt="Подача плова на большом блюде" loading="lazy" referrerpolicy="no-referrer" />
-          <img class="reveal" src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=1000&q=80" alt="Горячее блюдо на праздничном столе" loading="lazy" referrerpolicy="no-referrer" />
-          <img class="reveal" src="https://images.unsplash.com/photo-1534939561126-855b8675edd7?auto=format&fit=crop&w=1000&q=80" alt="Кухня и приготовление плова" loading="lazy" referrerpolicy="no-referrer" />
+          <img class="reveal" src="https://images.unsplash.com/photo-1514517220031-1f9d75d8cc59?auto=format&fit=crop&w=900&q=80" alt="Плов на блюде" loading="lazy" referrerpolicy="no-referrer" />
+          <img class="reveal" src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=900&q=80" alt="Горячий плов на столе" loading="lazy" referrerpolicy="no-referrer" />
+          <img class="reveal" src="https://images.unsplash.com/photo-1534939561126-855b8675edd7?auto=format&fit=crop&w=900&q=80" alt="Процесс приготовления плова" loading="lazy" referrerpolicy="no-referrer" />
+          <img class="reveal" src="https://images.unsplash.com/photo-1481931098730-318b6f776db0?auto=format&fit=crop&w=900&q=80" alt="Блюдо восточной кухни" loading="lazy" referrerpolicy="no-referrer" />
+          <img class="reveal" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80" alt="Подача горячего блюда" loading="lazy" referrerpolicy="no-referrer" />
+          <img class="reveal" src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80" alt="Плов с мясом" loading="lazy" referrerpolicy="no-referrer" />
+          <img class="reveal" src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80" alt="Большое блюдо с рисом" loading="lazy" referrerpolicy="no-referrer" />
+          <img class="reveal" src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=900&q=80" alt="Еда на деревянном столе" loading="lazy" referrerpolicy="no-referrer" />
+          <img class="reveal" src="https://images.unsplash.com/photo-1526318472351-c75fcf070305?auto=format&fit=crop&w=900&q=80" alt="Плов в глубокой тарелке" loading="lazy" referrerpolicy="no-referrer" />
+          <img class="reveal" src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=900&q=80" alt="Восточная кухня крупным планом" loading="lazy" referrerpolicy="no-referrer" />
+          <img class="reveal" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=80" alt="Подача блюда для гостей" loading="lazy" referrerpolicy="no-referrer" />
+          <img class="reveal" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=80" alt="Тарелка с рисом и овощами" loading="lazy" referrerpolicy="no-referrer" />
         </div>
       </div>
     </section>
 
-    <section class="section" id="about">
+    <section class="section" id="advantages">
       <div class="container">
-        <span class="kicker reveal">О нас</span>
-        <h2 class="reveal">Арсен Кухня - про вкус, щедрость и уважение к гостю</h2>
-        <div class="about-grid">
-          <article class="card reveal">
-            <p>Мы работаем в сфере общепита и специализируемся на одном направлении: все виды плова. Такой фокус помогает держать стабильно высокий результат в каждом заказе.</p>
-          </article>
-          <article class="card reveal">
-            <p>Наша задача проста: чтобы вы встретили гостей спокойно, а после праздника слышали только хорошие слова о столе.</p>
-          </article>
+        <span class="badge reveal">Почему мы</span>
+        <h2 class="reveal">Простой сервис и стабильный вкус</h2>
+        <div class="stats">
+          <article class="stat reveal"><strong>1 звонок</strong><p>для оформления и согласования заказа</p></article>
+          <article class="stat reveal"><strong>90%</strong><p>клиентов возвращаются по рекомендации</p></article>
+          <article class="stat reveal"><strong>Все виды</strong><p>плова в одном проекте без распыления</p></article>
+          <article class="stat reveal"><strong>0 лишнего</strong><p>меню и карту добавим точечно на следующем этапе</p></article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="faq">
+    <section class="section" id="contact">
       <div class="container">
-        <span class="kicker reveal">FAQ</span>
-        <h2 class="reveal">Частые вопросы перед заказом</h2>
-        <div class="faq-list">
-          <article class="faq-item reveal active">
-            <button class="faq-q" type="button">Можно заказать на маленькую компанию? <span>+</span></button>
-            <div class="faq-a">
-              <p>Да, принимаем как небольшие, так и крупные заказы. Подберём объём под ваш стол без переплат за лишние порции.</p>
-            </div>
-          </article>
-          <article class="faq-item reveal">
-            <button class="faq-q" type="button">На сколько заранее лучше звонить? <span>+</span></button>
-            <div class="faq-a">
-              <p>Чем раньше, тем лучше по выбору времени. Но если заказ срочный, всё равно звоните - скажем, что реально сделать.</p>
-            </div>
-          </article>
-          <article class="faq-item reveal">
-            <button class="faq-q" type="button">Вы работаете с офисами и мероприятиями? <span>+</span></button>
-            <div class="faq-a">
-              <p>Да, это наши основные форматы. Делаем заказы под корпоративы, праздники и семейные события.</p>
-            </div>
-          </article>
-          <article class="faq-item reveal">
-            <button class="faq-q" type="button">Как быстро узнать стоимость? <span>+</span></button>
-            <div class="faq-a">
-              <p>Обычно за несколько минут по телефону: называете количество гостей и дату, мы сразу даём расчёт.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="cta">
-      <div class="container">
-        <span class="kicker reveal">Оформить заказ</span>
-        <h2 class="reveal">Позвоните сейчас и забронируйте плов на вашу дату</h2>
-        <div class="cta-panel reveal">
+        <span class="badge reveal">Контакты</span>
+        <h2 class="reveal">Готовы принять заказ</h2>
+        <div class="contact-box reveal">
           <h3>Арсен Кухня</h3>
-          <p>Общепит. Все виды плова. Поможем быстро рассчитать объём и подачу под ваш формат.</p>
+          <p>Телефон: <a href="tel:+79640168349">8 (964) 016-83-49</a></p>
+          <p>Email: <a href="mailto:contact@arsen-kuhnya.ru">contact@arsen-kuhnya.ru</a></p>
+          <p>Адрес и точку на Яндекс Картах добавим следующим этапом.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="tel:+79640168349">Позвонить: 8 (964) 016-83-49</a>
-            <a class="btn btn-secondary" href="https://wa.me/79640168349" target="_blank" rel="noopener noreferrer">Написать в WhatsApp</a>
+            <a class="btn btn-primary" href="tel:+79640168349">Позвонить</a>
+            <a class="btn btn-light" href="https://wa.me/79640168349" target="_blank" rel="noopener noreferrer">WhatsApp</a>
           </div>
         </div>
       </div>
@@ -668,18 +534,18 @@
     <div class="container footer-grid">
       <div>
         <p class="footer-title">Арсен Кухня</p>
-        <p>Готовим все виды плова для дома, офиса и мероприятий. Вкусно, вовремя, по-честному.</p>
-      </div>
-      <div>
-        <p class="footer-title">Контакты</p>
-        <p><a href="tel:+79640168349">8 (964) 016-83-49</a></p>
-        <p><a href="mailto:contact@arsen-kuhnya.ru">contact@arsen-kuhnya.ru</a></p>
+        <p>Общепит. Все виды плова.</p>
       </div>
       <div>
         <p class="footer-title">Навигация</p>
-        <p><a href="#offers">Форматы заказа</a></p>
-        <p><a href="#faq">Вопросы</a></p>
-        <p><a href="#cta">Связаться</a></p>
+        <p><a href="#menu">Меню</a></p>
+        <p><a href="#gallery">Фото</a></p>
+        <p><a href="#contact">Контакты</a></p>
+      </div>
+      <div>
+        <p class="footer-title">Связь</p>
+        <p><a href="tel:+79640168349">8 (964) 016-83-49</a></p>
+        <p><a href="mailto:contact@arsen-kuhnya.ru">contact@arsen-kuhnya.ru</a></p>
       </div>
     </div>
   </footer>
@@ -687,8 +553,6 @@
   <a class="btn btn-primary mobile-call" href="tel:+79640168349">Позвонить: 8 (964) 016-83-49</a>
 
   <script>
-    const revealItems = document.querySelectorAll('.reveal');
-
     const observer = new IntersectionObserver((entries, obs) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -698,21 +562,12 @@
       });
     }, { threshold: 0.14 });
 
-    revealItems.forEach((item) => observer.observe(item));
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
-    const faqButtons = document.querySelectorAll('.faq-q');
-    faqButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        const item = button.closest('.faq-item');
-        item.classList.toggle('active');
-      });
-    });
-
-    const allImages = document.querySelectorAll('img');
-    allImages.forEach((img) => {
+    document.querySelectorAll('img').forEach((img) => {
       img.addEventListener('error', () => {
-        img.style.background = 'linear-gradient(145deg, #f8e4c8, #f1d2a0)';
-        img.style.minHeight = '220px';
+        img.style.background = 'linear-gradient(145deg, #f8e4c8, #f0d7b2)';
+        img.style.minHeight = '180px';
       });
     });
   </script>
